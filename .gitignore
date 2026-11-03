@@ -1,0 +1,25 @@
+/build/
+
+# Compiled Java files
+*.class
+
+# Build folders
+/build/
+/bin/
+/target/
+
+# Eclipse settings
+/.settings/
+/.metadata/
+Servers/
+
+# Logs
+*.log
+
+# Environment variables and secrets
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db

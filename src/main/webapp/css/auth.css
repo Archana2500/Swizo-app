@@ -1,0 +1,347 @@
+:root {
+	--orange: #fc8019;
+	--orange-dark: #e56f0c;
+	--card: #24212a;
+	--field: #34303c;
+	--muted: #a39fae;
+	--link: #ffa45c;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Segoe UI", system-ui, sans-serif;
+	background: #fffbf7;
+	color: #fff;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 28px 16px;
+}
+
+.auth-card {
+	display: grid;
+	grid-template-columns: 1.08fr 1fr;
+	width: 100%;
+	max-width: 1080px;
+	min-height: 600px;
+	background: var(--card);
+	border-radius: 30px;
+	padding: 18px;
+	box-shadow: 0 30px 70px rgba(36, 33, 42, .28);
+}
+
+/* ---------- picture panel ---------- */
+.hero {
+	position: relative;
+	border-radius: 22px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 22px 24px 28px;
+	background-color: var(--card);
+	background-repeat: no-repeat;
+}
+
+/* login: show only the dark banner at the top of the landing-page picture.
+   To zoom, change 250%. To move the picture, change the "2% 64px" values. */
+.hero.login {
+	background-size: 250% auto;
+	background-position: 2% 64px;
+}
+
+/* signup: the picture simply fills the panel */
+.hero.signup {
+	background-size: cover;
+	background-position: center;
+}
+
+/* dark fade at the bottom so the caption is readable (and hides the end of the login banner) */
+.hero::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	background: linear-gradient(to top, #24212a 0%, rgba(36, 33, 42, .9) 22%,
+		rgba(36, 33, 42, 0) 58%);
+}
+
+/* login: soft edge where the picture starts, under the logo row */
+.hero.login::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 110px;
+	pointer-events: none;
+	z-index: 1;
+	background: linear-gradient(to bottom, #24212a 0%, #24212a 45%, rgba(36, 33, 42, 0)
+		100%);
+}
+
+.hero-top, .cap {
+	position: relative;
+	z-index: 2;
+}
+
+.hero-top {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 12px;
+}
+
+.logo, .back {
+	background: rgba(36, 33, 42, .62);
+	-webkit-backdrop-filter: blur(6px);
+	backdrop-filter: blur(6px);
+	color: #fff;
+	text-decoration: none;
+	border-radius: 999px;
+}
+
+.logo {
+	font-size: 1.35rem;
+	font-weight: 900;
+	letter-spacing: -.5px;
+	padding: 6px 16px;
+}
+
+.logo span {
+	color: var(--orange);
+}
+
+.back {
+	font-size: .9rem;
+	padding: 10px 16px;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.back:hover, .logo:hover {
+	background: rgba(36, 33, 42, .85);
+}
+
+.cap h2 {
+	font-size: 1.7rem;
+	font-weight: 600;
+	line-height: 1.25;
+}
+
+.cap p {
+	color: #e5e2ea;
+	margin-top: 6px;
+	font-size: .95rem;
+}
+
+/* ---------- form side ---------- */
+.form-side {
+	padding: 36px 46px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.form-side h1 {
+	font-size: clamp(2rem, 4vw, 2.7rem);
+	font-weight: 700;
+	line-height: 1.15;
+	margin-bottom: 12px;
+}
+
+.sub {
+	color: var(--muted);
+	margin-bottom: 26px;
+}
+
+.sub a {
+	color: var(--link);
+	text-decoration: underline;
+}
+
+.banner {
+	border-radius: 12px;
+	padding: 12px 16px;
+	margin-bottom: 18px;
+	font-size: .92rem;
+	font-weight: 600;
+}
+
+.banner.err {
+	background: rgba(229, 62, 62, .14);
+	border: 1px solid rgba(229, 62, 62, .45);
+	color: #ffb3b3;
+}
+
+.banner.ok {
+	background: rgba(34, 197, 94, .14);
+	border: 1px solid rgba(34, 197, 94, .45);
+	color: #a7f0c1;
+}
+
+.field {
+	margin-bottom: 16px;
+}
+
+.row2 {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 14px;
+}
+
+.field input[type="text"], .field input[type="email"], .field input[type="password"],
+	.field input[type="tel"] {
+	width: 100%;
+	background: var(--field);
+	border: 1px solid transparent;
+	border-radius: 10px;
+	padding: 17px 18px;
+	font-size: 1rem;
+	color: #fff;
+	outline: none;
+	transition: border-color .2s;
+}
+
+.field input::placeholder {
+	color: #8c8797;
+}
+
+.field input:focus {
+	border-color: #ff9d4d;
+}
+
+/* browsers paint saved logins white/yellow: keep the dark look */
+.field input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 1000px var(--field) inset;
+	-webkit-text-fill-color: #fff;
+	caret-color: #fff;
+}
+
+.pw {
+	position: relative;
+}
+
+.pw input {
+	padding-right: 56px !important;
+}
+
+.eye {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	background: none;
+	border: none;
+	color: var(--muted);
+	cursor: pointer;
+	padding: 8px;
+	display: flex;
+	border-radius: 8px;
+}
+
+.eye:hover {
+	color: #fff;
+}
+
+.eye:focus-visible {
+	outline: 2px solid var(--orange);
+}
+
+.eye .off {
+	display: none;
+}
+
+.eye.on .off {
+	display: block;
+}
+
+.eye.on .show {
+	display: none;
+}
+
+.forgot {
+	text-align: right;
+	margin: -4px 0 22px;
+}
+
+.forgot a {
+	color: var(--link);
+	font-weight: 600;
+	font-size: .9rem;
+	text-decoration: none;
+}
+
+.forgot a:hover {
+	text-decoration: underline;
+}
+
+.terms {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin: 4px 0 26px;
+	font-size: .92rem;
+	color: #e5e2ea;
+	cursor: pointer;
+}
+
+.terms input {
+	width: 20px;
+	height: 20px;
+	accent-color: var(--orange);
+	flex-shrink: 0;
+}
+
+.btn {
+	display: block;
+	width: 100%;
+	background: var(--orange);
+	color: #fff;
+	border: none;
+	border-radius: 10px;
+	padding: 17px;
+	font-weight: 700;
+	font-size: 1.05rem;
+	cursor: pointer;
+	transition: background .15s;
+}
+
+.btn:hover {
+	background: var(--orange-dark);
+}
+
+.btn:disabled {
+	background: #6b6574;
+	cursor: wait;
+}
+
+/* ---------- small screens ---------- */
+@media ( max-width : 880px) {
+	.auth-card {
+		grid-template-columns: 1fr;
+		min-height: 0;
+		border-radius: 24px;
+	}
+	.hero {
+		min-height: 230px;
+	}
+	.cap {
+		display: none;
+	}
+	.hero::after {
+		background: linear-gradient(to top, #24212a 0%, rgba(36, 33, 42, 0) 45%);
+	}
+	.form-side {
+		padding: 30px 20px 24px;
+	}
+	.row2 {
+		grid-template-columns: 1fr;}
+}

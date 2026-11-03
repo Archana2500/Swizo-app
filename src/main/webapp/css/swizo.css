@@ -1,0 +1,102 @@
+:root {
+	--orange: #fd7e14;
+	--orange-dark: #e8590c;
+	--bg: #fff7f0;
+	--ink: #1f2937;
+	--muted: #6b7280;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: "Segoe UI", system-ui, sans-serif;
+	background: var(--bg);
+	color: var(--ink);
+}
+
+.topbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 12px 8%;
+	background: #fff;
+	border-bottom: 1px solid #f1e4d8;
+	position: sticky;
+	top: 0;
+	z-index: 10;
+}
+
+.logo {
+	font-size: 1.5rem;
+	font-weight: 800;
+	color: var(--orange);
+	text-decoration: none;
+}
+
+.topbar nav {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+
+.pill {
+	position: relative;
+	background: #ffeedd;
+	color: var(--orange-dark);
+	font-weight: 700;
+	font-size: .9rem;
+	padding: 8px 14px;
+	border-radius: 999px;
+	text-decoration: none;
+}
+
+.pill.icon {
+	padding: 8px 11px;
+}
+
+.badge {
+	position: absolute;
+	top: -6px;
+	right: -4px;
+	background: var(--orange);
+	color: #fff;
+	font-size: .7rem;
+	border-radius: 999px;
+	padding: 1px 6px;
+}
+
+.btn {
+	display: inline-block;
+	border: 0;
+	background: var(--orange);
+	color: #fff;
+	font-weight: 700;
+	padding: 12px 22px;
+	border-radius: 10px;
+	cursor: pointer;
+	text-decoration: none;
+	font-size: 1rem;
+}
+
+.btn.outline {
+	background: #fff;
+	color: var(--orange-dark);
+	border: 1px solid var(--orange);
+}
+
+.center-card {
+	max-width: 440px;
+	margin: 60px auto;
+	background: #fff;
+	border: 1px solid #eee;
+	border-radius: 14px;
+	padding: 36px;
+	text-align: center;
+}
+
+.muted {
+	color: var(--muted);
+}

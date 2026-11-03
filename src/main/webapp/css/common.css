@@ -1,0 +1,148 @@
+/* ==========================================================================
+   Swizo Common Stylesheet
+   ========================================================================== */
+
+/* Universal Reset */
+*, *::before, *::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* Base Body & Typography */
+body {
+	font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto,
+		"Helvetica Neue", Arial, sans-serif;
+	background-color: #fffaf5;
+	color: #24212a;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Common Links & Buttons */
+a {
+	color: #fc8019;
+	text-decoration: none;
+	transition: color 0.2s ease, transform 0.2s ease;
+}
+
+a:hover {
+	color: #e96d0b;
+}
+
+button {
+	font-family: inherit;
+	cursor: pointer;
+	border: none;
+	outline: none;
+}
+
+/* Navigation Bar Base Styles */
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 16px 32px;
+	background-color: #ffffff;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+}
+
+.navbar .logo {
+	font-size: 28px;
+	font-weight: 800;
+	color: #fc8019;
+	letter-spacing: -1px;
+}
+
+.nav-links {
+	display: flex;
+	gap: 24px;
+	list-style: none;
+}
+
+.nav-links a {
+	color: #3a3f4b;
+	font-weight: 600;
+	font-size: 15px;
+}
+
+.nav-links a:hover, .nav-links a.active {
+	color: #fc8019;
+}
+
+/* Main Container Wrappers */
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+/* Utility Button Classes */
+.btn-primary {
+	display: inline-block;
+	padding: 12px 24px;
+	background-color: #fc8019;
+	color: #ffffff !important;
+	border-radius: 9px;
+	font-weight: 700;
+	font-size: 14px;
+	text-align: center;
+	border: 1px solid #fc8019;
+	transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+	background-color: #e96d0b;
+	transform: translateY(-1px);
+}
+
+.btn-outline {
+	display: inline-block;
+	padding: 12px 24px;
+	background-color: transparent;
+	color: #fc8019 !important;
+	border-radius: 9px;
+	font-weight: 700;
+	font-size: 14px;
+	text-align: center;
+	border: 2px solid #fc8019;
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-outline:hover {
+	background-color: #fff3e8;
+}
+
+/* Status Badges */
+.badge {
+	display: inline-block;
+	padding: 4px 12px;
+	border-radius: 999px;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.4px;
+}
+
+.badge-success {
+	background: #e7f8ed;
+	color: #20a45b;
+}
+
+.badge-warning {
+	background: #fff4e0;
+	color: #d9822b;
+}
+
+.badge-danger {
+	background: #fde8e8;
+	color: #d64545;
+}
+
+.badge-info {
+	background: #e8eefc;
+	color: #3b5bdb;
+}

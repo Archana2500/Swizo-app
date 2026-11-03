@@ -1,0 +1,559 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+.orders-body {
+	background: #fffaf5;
+	color: #212529;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, sans-serif;
+	margin: 0;
+}
+
+/* ---------- PAGE LAYOUT: panel + orders ---------- */
+.or-layout {
+	display: grid;
+	grid-template-columns: 340px 1fr;
+	gap: 30px;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 24px 20px 60px;
+	align-items: start;
+}
+
+/* ---------- LEFT PANEL ---------- */
+.or-side {
+	position: sticky;
+	top: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	padding: 14px;
+	background: #fff3e6;
+	border-radius: 22px;
+}
+
+.or-hungry {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 20px 16px;
+	background: #ffe9d2;
+	border-radius: 16px;
+	overflow: hidden;
+}
+
+.or-hungry-text {
+	flex: 1;
+	min-width: 0;
+}
+
+.or-hungry h2 {
+	margin: 0 0 6px;
+	font-size: 26px;
+	line-height: 1.1;
+	font-weight: 800;
+}
+
+.or-hungry p {
+	margin: 0 0 14px;
+	font-size: 13px;
+	color: #6b625c;
+}
+
+.or-hungry img {
+	width: 46%;
+	height: 150px;
+	object-fit: cover;
+	border-radius: 14px;
+	flex-shrink: 0;
+}
+
+.or-reorder {
+	display: inline-block;
+	padding: 10px 16px;
+	background: #fc8019;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 700;
+	border-radius: 10px;
+	text-decoration: none;
+}
+
+.or-reorder:hover {
+	background: #e96d0b;
+}
+
+.or-offer {
+	padding: 16px;
+	background: #fff;
+	border: 1px solid #f6e3d1;
+	border-radius: 16px;
+}
+
+.or-offer h3 {
+	margin: 0 0 12px;
+	font-size: 16px;
+	font-weight: 800;
+}
+
+.or-code-row {
+	display: flex;
+	gap: 8px;
+	margin-bottom: 10px;
+}
+
+.or-code {
+	flex: 1;
+	padding: 10px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: 800;
+	letter-spacing: 1px;
+	color: #fc8019;
+	border: 2px dashed #f4b987;
+	border-radius: 10px;
+	background: #fffaf5;
+}
+
+.or-copy {
+	padding: 0 14px;
+	background: #fff;
+	color: #e96d0b;
+	font-size: 13px;
+	font-weight: 700;
+	font-family: inherit;
+	border: 1px solid #f4b987;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.or-copy:hover {
+	background: #fff3e6;
+}
+
+.or-offer p {
+	margin: 0 0 12px;
+	font-size: 13px;
+	color: #6b625c;
+}
+
+.or-offer-btn {
+	display: inline-block;
+	padding: 9px 16px;
+	background: #fc8019;
+	color: #fff;
+	font-size: 13px;
+	font-weight: 700;
+	border-radius: 8px;
+	text-decoration: none;
+}
+
+.or-offer-btn:hover {
+	background: #e96d0b;
+}
+
+.or-near-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
+
+.or-near-head h3 {
+	margin: 0;
+	font-size: 16px;
+	font-weight: 800;
+}
+
+.or-near-head a {
+	font-size: 13px;
+	font-weight: 600;
+	color: #e96d0b;
+	text-decoration: none;
+}
+
+.or-near-item {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 10px;
+	padding: 8px;
+	background: #fff;
+	border: 1px solid #f6e3d1;
+	border-radius: 14px;
+	color: inherit;
+	text-decoration: none;
+	transition: box-shadow 0.2s;
+}
+
+.or-near-item:hover {
+	box-shadow: 0 6px 16px rgba(36, 33, 42, 0.08);
+}
+
+.or-near-item img {
+	width: 78px;
+	height: 70px;
+	object-fit: cover;
+	border-radius: 10px;
+	flex-shrink: 0;
+}
+
+.or-near-item strong {
+	display: block;
+	font-size: 14px;
+}
+
+.or-near-item span {
+	display: block;
+	margin: 2px 0;
+	font-size: 12px;
+	color: #6b625c;
+}
+
+.or-near-item em {
+	font-style: normal;
+	font-size: 12px;
+	font-weight: 700;
+	color: #15803d;
+}
+
+.or-explore {
+	display: block;
+	padding: 12px;
+	text-align: center;
+	font-size: 14px;
+	font-weight: 700;
+	color: #e96d0b;
+	background: #fff;
+	border: 1.5px solid #fc8019;
+	border-radius: 10px;
+	text-decoration: none;
+}
+
+.or-explore:hover {
+	background: #fff3e6;
+}
+
+/* ---------- RIGHT: ORDERS ---------- */
+.or-wrap {
+	min-width: 0;
+}
+
+.or-title {
+	font-size: 32px;
+	font-weight: 800;
+	margin: 4px 0 4px;
+	color: #1f2430;
+}
+
+.or-subtitle {
+	margin: 0 0 20px;
+	color: #8a8f9c;
+}
+
+/* Filter pills */
+.or-pills {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-bottom: 20px;
+}
+
+.or-pill {
+	padding: 9px 20px;
+	background: #fff;
+	color: #3a3f4b;
+	font-size: 14px;
+	font-weight: 600;
+	font-family: inherit;
+	border: 1px solid #e5e0da;
+	border-radius: 999px;
+	cursor: pointer;
+	transition: all 0.2s;
+}
+
+.or-pill:hover {
+	border-color: #fc8019;
+}
+
+.or-pill.active {
+	background: #fc8019;
+	color: #fff;
+	border-color: #fc8019;
+}
+
+/* Card */
+.or-card {
+	background: #fff;
+	border-radius: 14px;
+	border-left: 4px solid #fc8019;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+	padding: 18px 20px;
+	margin-bottom: 18px;
+}
+
+.or-card-placed {
+	border-left-color: #d9822b;
+}
+
+.or-card-paid, .or-card-delivered {
+	border-left-color: #2b9a56;
+}
+
+.or-card-confirmed, .or-card-preparing {
+	border-left-color: #3b5bdb;
+}
+
+.or-card-cancelled {
+	border-left-color: #d64545;
+}
+
+/* Header */
+.or-head {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 12px;
+	padding-bottom: 12px;
+	border-bottom: 1px solid #eee;
+}
+
+.or-rest {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	min-width: 0;
+}
+
+.or-rest-img {
+	width: 56px;
+	height: 56px;
+	border-radius: 10px;
+	object-fit: cover;
+	flex-shrink: 0;
+	background: #f0f1f5;
+}
+
+.or-rest-ph {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 24px;
+}
+
+.or-restaurant {
+	font-size: 18px;
+	font-weight: 700;
+	color: #1f2430;
+}
+
+.or-id {
+	font-size: 13px;
+	color: #8a8f9c;
+	margin-top: 2px;
+}
+
+/* Status badge */
+.or-status {
+	padding: 5px 12px;
+	border-radius: 999px;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.4px;
+	background: #e8eefc;
+	color: #3b5bdb;
+	white-space: nowrap;
+}
+
+.or-status-placed {
+	background: #fff4e0;
+	color: #d9822b;
+}
+
+.or-status-paid, .or-status-delivered {
+	background: #e3f6ea;
+	color: #2b9a56;
+}
+
+.or-status-confirmed, .or-status-preparing {
+	background: #e8eefc;
+	color: #3b5bdb;
+}
+
+.or-status-cancelled {
+	background: #fde8e8;
+	color: #d64545;
+}
+
+/* Items */
+.or-items {
+	list-style: none;
+	margin: 0;
+	padding: 12px 0;
+}
+
+.or-items li {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 6px 0;
+	font-size: 15px;
+	color: #3a3f4b;
+}
+
+.or-item-name {
+	flex: 1;
+}
+
+.or-item-qty {
+	color: #8a8f9c;
+	min-width: 36px;
+	text-align: right;
+}
+
+.or-item-price {
+	min-width: 80px;
+	text-align: right;
+	font-weight: 600;
+}
+
+/* Footer */
+.or-foot {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 8px;
+	padding-top: 12px;
+	border-top: 1px dashed #ddd;
+}
+
+.or-meta {
+	font-size: 13px;
+	color: #8a8f9c;
+}
+
+.or-amount {
+	font-size: 15px;
+	color: #3a3f4b;
+}
+
+.or-amount strong {
+	font-size: 18px;
+	color: #1f2430;
+}
+
+.or-actions {
+	margin-top: 12px;
+}
+
+.or-actions a {
+	font-size: 13px;
+	font-weight: 700;
+	color: #e96d0b;
+	text-decoration: none;
+}
+
+.or-actions a:hover {
+	text-decoration: underline;
+}
+
+/* Show older orders + filtering */
+.or-hidden {
+	display: none;
+}
+
+.or-filtering .or-card.or-hidden {
+	display: block;
+}
+
+.or-card.or-out {
+	display: none !important;
+}
+
+.or-more {
+	display: block;
+	margin: 6px auto 30px;
+	padding: 10px 22px;
+	background: #fff;
+	color: #fc8019;
+	border: 1px solid #fc8019;
+	border-radius: 8px;
+	font-size: 14px;
+	font-weight: 600;
+	font-family: inherit;
+	cursor: pointer;
+}
+
+.or-more:hover {
+	background: #fc8019;
+	color: #fff;
+}
+
+.or-none {
+	display: none;
+	padding: 30px;
+	text-align: center;
+	color: #8a8f9c;
+}
+
+/* Empty state */
+.or-empty {
+	background: #fff;
+	border-radius: 14px;
+	padding: 40px 20px;
+	text-align: center;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+	color: #555;
+}
+
+.or-empty a {
+	display: inline-block;
+	margin-top: 10px;
+	padding: 10px 20px;
+	background: #fc8019;
+	color: #fff;
+	border-radius: 8px;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.or-empty a:hover {
+	background: #e26f12;
+}
+
+/* ---------- TABLET / MOBILE: orders first, panel below ---------- */
+@media ( max-width : 900px) {
+	.or-layout {
+		grid-template-columns: 1fr;
+		gap: 24px;
+	}
+	.or-wrap {
+		order: 1;
+	}
+	.or-side {
+		order: 2;
+		position: static;
+	}
+}
+
+@media ( max-width : 520px) {
+	.or-title {
+		font-size: 28px;
+	}
+	.or-card {
+		padding: 16px;
+	}
+	.or-head {
+		flex-wrap: wrap;
+	}
+	.or-item-price {
+		min-width: 64px;
+	}
+	.or-foot {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}

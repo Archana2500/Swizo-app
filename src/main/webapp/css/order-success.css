@@ -1,0 +1,127 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+.success-body {
+	background: #f8f9fa;
+	color: #212529;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, sans-serif;
+	margin: 0;
+}
+
+.os-wrap {
+	max-width: 560px;
+	margin: 60px auto;
+	padding: 0 16px;
+}
+
+.os-card {
+	background: #ffffff;
+	border: 1px solid #e5e7eb;
+	border-radius: 12px;
+	padding: 40px 32px;
+	text-align: center;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* STEP 1: VIDEO */
+.os-video-wrap {
+	width: 300px;
+	max-width: 80%;
+	margin: 0 auto;
+	border-radius: 18px;
+	overflow: hidden;
+}
+
+.os-video {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* STEP 2: RESULT (hidden until the video ends) */
+.os-result {
+	display: none;
+	opacity: 0;
+	transform: translateY(14px);
+	transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.os-result.show {
+	display: block;
+}
+
+.os-result.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.os-icon {
+	width: 64px;
+	height: 64px;
+	margin: 0 auto 18px;
+	border-radius: 50%;
+	background: #e8f5e9;
+	color: #16a34a;
+	font-size: 34px;
+	line-height: 64px;
+	font-weight: bold;
+	transform: scale(0.5);
+	transition: transform 0.5s ease 0.15s;
+}
+
+.os-result.visible .os-icon {
+	transform: scale(1);
+}
+
+.os-card h1 {
+	margin: 0 0 12px;
+	font-size: 24px;
+	color: #16a34a;
+}
+
+.os-id {
+	font-size: 18px;
+	margin: 10px 0;
+	color: #111827;
+}
+
+.os-msg {
+	color: #6b7280;
+	font-size: 14px;
+	margin: 0 0 24px;
+}
+
+.os-actions {
+	display: flex;
+	gap: 12px;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.os-btn {
+	display: inline-block;
+	padding: 12px 24px;
+	background: #fc8019;
+	color: #ffffff;
+	text-decoration: none;
+	border-radius: 8px;
+	font-weight: 700;
+	font-size: 14px;
+	border: 1px solid #fc8019;
+	transition: background-color 0.2s;
+}
+
+.os-btn:hover {
+	background: #e26f12;
+}
+
+.os-btn-outline {
+	background: transparent;
+	color: #fc8019;
+}
+
+.os-btn-outline:hover {
+	background: #fff4ea;
+}
